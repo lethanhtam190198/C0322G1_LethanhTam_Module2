@@ -2,7 +2,7 @@ package ss1_javaintroduction.bai_tap;
 
 import java.util.Scanner;
 
-public class Convertnumbertoletters {
+public class ConvertNumberToLetters {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập số cần đọc ");
@@ -108,39 +108,4 @@ public class Convertnumbertoletters {
         else System.out.print("Invalid input!");
         }
     }
-
-
-
-
-
-
-                /*switch (number3/10) {
-                case 1:
-                    Convertnumbertoletters=Convertnumbertoletters+" Hundred";
-                    break;
-                case 2:
-                    Convertnumbertoletters=Convertnumbertoletters+" Hundred";
-                    break;
-                case 3:
-                    Convertnumbertoletters=Convertnumbertoletters+" Hundred";
-                    break;
-                case 4:
-                    Convertnumbertoletters=Convertnumbertoletters+" Hundred";
-                    break;
-                case 5:
-                    Convertnumbertoletters=Convertnumbertoletters+" Hundred";
-                    break;
-                case 6:
-                    Convertnumbertoletters=Convertnumbertoletters+" Hundred";
-                    break;
-                case 7:
-                    Convertnumbertoletters=Convertnumbertoletters+" Hundred";
-                    break;
-                case 8:
-                    Convertnumbertoletters=Convertnumbertoletters+" Hundred";
-                    break;
-                case 9:
-                    Convertnumbertoletters=Convertnumbertoletters+" Hundred";
-                    break;
-            }*/
 
