@@ -2,7 +2,7 @@ package ss2.baitap;
 
 import java.util.Scanner;
 
-public class Displaypic {
+public class DisplayImage {
     public static void main(String[] args) {
         int choice = -1;
         Scanner input = new Scanner(System.in);
