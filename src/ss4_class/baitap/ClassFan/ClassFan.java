@@ -1,13 +1,14 @@
 package ss4_class.baitap.ClassFan;
 
 public class ClassFan {
-    final int SLOW=1;
-    final int MEDIUM=2;
-    final int FAST=3;
-    private int speed=SLOW;
-    private boolean button=false;
-    private double radius=5;
-    private String color="blue";
+    final int SLOW = 1;
+    final int MEDIUM = 2;
+    final int FAST = 3;
+    private int speed = SLOW;
+    private boolean button = false;
+    private double radius = 5;
+    private String color = "blue";
+    private String name;
 
     public int getSLOW() {
         return SLOW;
@@ -52,22 +53,32 @@ public class ClassFan {
     public void setColor(String color) {
         this.color = color;
     }
-    public ClassFan(){
+
+    public ClassFan() {
 
     }
 
-    public ClassFan(int speed, boolean button, double radius, String color){
-        this.speed=speed;
-        this.button=button;
-        this.radius=radius;
-        this.color=color;
+    public String getName() {
+        return name;
     }
-    public String Print(){
-        if(this.button){
-            return "Speed:"+this.speed+" Radius:"+this.radius+" Color:"+this.color+" Fan is on";
-        }
-        else{
-            return  "Color:"+this.color+" Radius:"+this.radius+" Fan is off";
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ClassFan(int speed, boolean button, double radius, String color, String name) {
+        this.speed = speed;
+        this.button = button;
+        this.radius = radius;
+        this.color = color;
+        this.name = name;
+    }
+
+    public String toString() {
+        if ( speed != 0) {
+            return this.getName() + "ON " + "Speed:" + this.speed + " Radius:" + this.radius + " Color:" + this.color;
+        } else {
+            return this.getName() + "OFF " + "Color:" + this.color + " Radius:" + this.radius + " Fan is off";
         }
     }
 

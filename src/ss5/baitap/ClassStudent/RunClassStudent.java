@@ -1,4 +1,4 @@
-package ss5.ClassStudent;
+package ss5.baitap.ClassStudent;
 
 import java.util.Scanner;
 
