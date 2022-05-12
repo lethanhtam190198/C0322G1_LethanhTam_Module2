@@ -1,4 +1,4 @@
-package ss6_Inheritance.Point2dAnd3d;
+package ss6_Inheritance.baitap.Point2dAnd3d;
 
 import java.util.Scanner;
 

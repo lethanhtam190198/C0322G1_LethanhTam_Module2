@@ -6,7 +6,7 @@ public class Product {
     private double price;
     private int amout;
     private String production;
-    public  Product(){
+    public Product(){
 
     }
 

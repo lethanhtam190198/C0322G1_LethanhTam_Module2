@@ -1,4 +1,4 @@
-package ss6_Inheritance.Point2dAnd3d;
+package ss6_Inheritance.baitap.Point2dAnd3d;
 
 public class Point3d extends Point2d {
     public float z;

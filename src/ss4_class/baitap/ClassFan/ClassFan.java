@@ -75,10 +75,10 @@ public class ClassFan {
     }
 
     public String toString() {
-        if ( speed != 0) {
+        if ( this.button) {
             return this.getName() + "ON " + "Speed:" + this.speed + " Radius:" + this.radius + " Color:" + this.color;
         } else {
-            return this.getName() + "OFF " + "Color:" + this.color + " Radius:" + this.radius + " Fan is off";
+            return this.getName() + "OFF " + "Color:" + this.color + " Radius:" + this.radius ;
         }
     }
 

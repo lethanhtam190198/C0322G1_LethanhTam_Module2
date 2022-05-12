@@ -1,4 +1,4 @@
-package ss6_Inheritance.MoveablePoint;
+package ss6_Inheritance.baitap.MoveablePoint;
 
 public class MoveablePoint extends Point {
     public float xSpeed;

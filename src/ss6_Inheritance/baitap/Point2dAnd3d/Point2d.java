@@ -1,6 +1,4 @@
-package ss6_Inheritance.Point2dAnd3d;
-
-import java.lang.reflect.Array;
+package ss6_Inheritance.baitap.Point2dAnd3d;
 
 public class Point2d {
     public float x;

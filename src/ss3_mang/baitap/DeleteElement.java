@@ -41,5 +41,6 @@ public class DeleteElement {
         }
         System.out.println(Arrays.toString(array));
 
+
     }
 }

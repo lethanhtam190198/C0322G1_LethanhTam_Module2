@@ -1,4 +1,4 @@
-package ss6_Inheritance.Triangle;
+package ss6_Inheritance.baitap.Triangle;
 
 public class Triangle extends Shape {
     public Triangle(){

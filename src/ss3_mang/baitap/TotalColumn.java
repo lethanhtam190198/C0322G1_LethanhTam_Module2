@@ -18,19 +18,20 @@ public class TotalColumn {
                 arr[i][j] = scanner.nextInt();
             }
         }
-        System.out.println(Arrays.toString(arr));
-        for (int i = 0; i <row ; i++) {
+
+        for (int i = 0; i < row; i++) {
             System.out.print("[");
             for (int j = 0; j < height; j++) {
 
-                System.out.print(arr[i][j] +" ");
+                System.out.print(arr[i][j] + " ");
             }
-        }System.out.println("]");
-        System.out.println("nter the number of columns you want to sum");
+        }
+        System.out.println("]");
+        System.out.println("nhập cột muốn tính tổng");
         int column = scanner.nextInt();
-        int sum =0;
-        for (int i = 0; i <row ; i++) {
-            sum += arr[i][column];
+        int sum = 0;
+        for (int i = 0; i < row; i++) {
+            sum = sum + arr[i][column];
         }
         System.out.println(sum);
     }

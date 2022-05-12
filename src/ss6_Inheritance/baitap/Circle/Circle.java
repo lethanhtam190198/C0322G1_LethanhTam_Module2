@@ -1,4 +1,4 @@
-package ss6_Inheritance.baitap;
+package ss6_Inheritance.baitap.Circle;
 
 public class Circle {
     private double radius;

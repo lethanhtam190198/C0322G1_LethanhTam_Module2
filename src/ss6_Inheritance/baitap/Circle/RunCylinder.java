@@ -1,6 +1,4 @@
-package ss6_Inheritance.baitap;
-
-import java.util.Scanner;
+package ss6_Inheritance.baitap.Circle;
 
 public class RunCylinder {
     public static void main(String[] args) {
