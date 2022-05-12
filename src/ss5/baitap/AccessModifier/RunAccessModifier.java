@@ -11,7 +11,7 @@ public class RunAccessModifier {
         double radius= scanner.nextDouble();
         System.out.println("nhập màu:");
         String color=scanner.next();
-        accessModifier.setRaidus(radius);
+        accessModifier.setRadius(radius);
         accessModifier.setColor(color);
         accessModifier.display();
     }

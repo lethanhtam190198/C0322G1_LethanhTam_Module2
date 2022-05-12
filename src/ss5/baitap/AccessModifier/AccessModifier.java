@@ -1,18 +1,18 @@
 package ss5.baitap.AccessModifier;
 
 public class AccessModifier {
-    private double raidus=1.0;
+    private double radius =1.0;
     private String color="Red";
     public  AccessModifier(){
 
     }
 
-    public double getRaidus() {
-        return raidus;
+    public double getRadius() {
+        return radius;
     }
 
-    public void setRaidus(double raidus) {
-        this.raidus = raidus;
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 
     public String getColor() {
@@ -24,14 +24,14 @@ public class AccessModifier {
     }
 
     public  AccessModifier(double raidus, String color){
-        this.raidus=raidus;
+        this.radius =raidus;
         this.color=color;
     }
     public double getArea(){
-        return Math.pow(raidus,2)*Math.PI;
+        return Math.pow(radius,2)*Math.PI;
     }
     public void display(){
-        System.out.println("bán kính: "+this.raidus);
+        System.out.println("bán kính: "+this.radius);
         System.out.println("Màu: "+this.color);
         System.out.println("Diện tích: "+getArea());
     }

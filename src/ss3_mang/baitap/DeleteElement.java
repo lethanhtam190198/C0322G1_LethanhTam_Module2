@@ -12,7 +12,7 @@ public class DeleteElement {
             System.out.print("Số phần tử của mảng:");
             size = scanner.nextInt();
             if (size > 20)
-                System.out.println("Quá 2 phần tử");
+                System.out.println("Quá 20 phần tử");
         } while (size > 20);
         array = new int[size];
         int i = 0;
@@ -23,7 +23,7 @@ public class DeleteElement {
         }
         System.out.println("Property list: ");
         for (int j = 0; j < array.length; j++) {
-            System.out.println(array[j] + "\t");
+            System.out.println(array[j] );
         }
         System.out.println("nhập vào phần tử muốn xoá:");
         int input = scanner.nextInt();
