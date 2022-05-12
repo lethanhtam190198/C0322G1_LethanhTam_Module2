@@ -1,8 +1,8 @@
 package ss5.baitap.ClassStudent;
 
 public class ClassStudent {
-    private String name ="John";
-    private String className="C02";
+    private String name = "John";
+    private String className = "C02";
 
     public String getName() {
         return name;
@@ -19,7 +19,8 @@ public class ClassStudent {
     public void setClassName(String className) {
         this.className = className;
     }
-    public ClassStudent(){
+
+    public ClassStudent() {
 
     }
 
@@ -27,8 +28,9 @@ public class ClassStudent {
         this.name = name;
         this.className = className;
     }
-    public void display(){
-        System.out.println(" tên:"+ this.name);
-        System.out.println(" lớp:"+ this.className);
+
+    public void display() {
+        System.out.println(" tên:" + this.name);
+        System.out.println(" lớp:" + this.className);
     }
 }
