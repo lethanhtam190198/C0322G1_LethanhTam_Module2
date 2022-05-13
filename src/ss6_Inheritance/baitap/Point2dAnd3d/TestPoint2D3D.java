@@ -9,13 +9,13 @@ public class TestPoint2D3D {
         float x = scanner.nextFloat();
         System.out.println("nhap Y:");
         float y = scanner.nextFloat();
-        Point2d point2d = new Point2d();
-        point2d = new Point2d(x, y);
+        Point2D point2d = new Point2D();
+        point2d = new Point2D(x, y);
         System.out.println(point2d);
         System.out.println("nhap z:");
         float z = scanner.nextFloat();
-        Point3d point3d = new Point3d();
-        point3d = new Point3d(x, y, z);
+        Point3D point3d = new Point3D();
+        point3d = new Point3D(x, y, z);
         System.out.println(point3d);
     }
 }

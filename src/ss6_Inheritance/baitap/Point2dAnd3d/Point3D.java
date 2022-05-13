@@ -1,17 +1,17 @@
 package ss6_Inheritance.baitap.Point2dAnd3d;
 
-public class Point3d extends Point2d {
+public class Point3D extends Point2D {
     public float z;
 
-    public Point3d() {
+    public Point3D() {
 
     }
 
-    public Point3d(float z) {
+    public Point3D(float z) {
         this.z = z;
     }
 
-    public Point3d(float x, float y, float z) {
+    public Point3D(float x, float y, float z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -38,9 +38,7 @@ public class Point3d extends Point2d {
 
     @Override
     public String toString() {
-        return "Point3d " +
-                " x=" + x +
-                ", y=" + y +
-                ", z=" + z;
+        return "(" + x +
+                "," + y+","+z+")";
     }
 }

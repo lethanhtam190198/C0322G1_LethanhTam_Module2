@@ -17,7 +17,7 @@ public class RunMoveablePoint {
         System.out.println("nhap ySpeed:");
         float ySpeed = scanner.nextFloat();
         MoveablePoint moveablePoint = new MoveablePoint();
-        moveablePoint = new MoveablePoint(xSpeed, ySpeed);
+        moveablePoint = new MoveablePoint(x,y,xSpeed, ySpeed);
         System.out.println(moveablePoint);
     }
 }

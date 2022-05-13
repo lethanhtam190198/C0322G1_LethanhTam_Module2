@@ -45,11 +45,10 @@ public class DisplayImage {
                         }
                         System.out.println();
                     }
-                    System.out.println();
                     break;
                 case 4:
                     for (int i = 0; i < length; i++) {
-                        for (int j = i; j < length-1; j++) {
+                        for (int j = length-i; j >0; j--) {
                             System.out.print(" ");
                         }
                         for (int k = 0; k <=i ; k++) {

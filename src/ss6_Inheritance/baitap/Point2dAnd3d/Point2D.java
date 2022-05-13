@@ -1,14 +1,14 @@
 package ss6_Inheritance.baitap.Point2dAnd3d;
 
-public class Point2d {
+public class Point2D {
     public float x;
     public float y;
 
-    public Point2d() {
+    public Point2D() {
 
     }
 
-    public Point2d(float x, float y) {
+    public Point2D(float x, float y) {
         this.x = x;
         this.y = y;
     }
@@ -41,8 +41,7 @@ public class Point2d {
 
     @Override
     public String toString() {
-        return "Point2d" +
-                "x=" + x +
-                ", y=" + y;
+        return "(" + x +
+                "," + y+")";
     }
 }
