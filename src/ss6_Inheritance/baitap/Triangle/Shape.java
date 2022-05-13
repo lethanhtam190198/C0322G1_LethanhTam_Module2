@@ -4,13 +4,15 @@ public class Shape {
     public double side1;
     public double side2;
     public double side3;
-    public Shape(){
+
+    public Shape() {
 
     }
-    public Shape(double side1, double side2,double side3){
-        this.side1=side1;
-        this.side2=side2;
-        this.side3=side3;
+
+    public Shape(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
     }
 
     public double getSide1() {
@@ -36,11 +38,13 @@ public class Shape {
     public void setSide3(double side3) {
         this.side3 = side3;
     }
-    public double getArea(){
-        return side1*(Math.pow(side1,2)-(Math.pow(side1,2)/4));
+
+    public double getArea() {
+        return side1 * (Math.pow(side1, 2) - (Math.pow(side1, 2) / 4));
     }
-    public double getPerimeter(){
-        return side1*3;
+
+    public double getPerimeter() {
+        return side1 * 3;
     }
 
     @Override
@@ -49,8 +53,8 @@ public class Shape {
                 " side1=" + side1 +
                 ", side2=" + side2 +
                 ", side3=" + side3 +
-                ", Area=" + getArea()+
-                ", Perimeter="+ getPerimeter()+
+                ", Area=" + getArea() +
+                ", Perimeter=" + getPerimeter() +
                 '}';
     }
 }

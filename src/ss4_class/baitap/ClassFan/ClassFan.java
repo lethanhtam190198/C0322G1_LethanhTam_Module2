@@ -75,7 +75,7 @@ public class ClassFan {
     }
 
     public String toString() {
-        if ( this.button) {
+        if (this.button==true) {
             return this.getName() + "ON " + "Speed:" + this.speed + " Radius:" + this.radius + " Color:" + this.color;
         } else {
             return this.getName() + "OFF " + "Color:" + this.color + " Radius:" + this.radius ;

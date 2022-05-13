@@ -2,7 +2,8 @@ package ss6_Inheritance.baitap.Circle;
 
 public class Cylinder extends Circle {
     private double height;
-    public Cylinder(){
+
+    public Cylinder() {
     }
 
     public double getHeight() {
@@ -13,17 +14,18 @@ public class Cylinder extends Circle {
         this.height = height;
     }
 
-    public Cylinder(double radius, String color, double height){
-        super(radius,color);
-        this.height=height;
+    public Cylinder(double radius, String color, double height) {
+        super(radius, color);
+        this.height = height;
     }
-    public double volume(){
-        return super.getArea()*height;
+
+    public double volume() {
+        return super.getArea() * height;
     }
 
     @Override
     public String toString() {
-        return "height=" + height +" "+
+        return "height=" + height + " " +
                 super.toString();
     }
 }

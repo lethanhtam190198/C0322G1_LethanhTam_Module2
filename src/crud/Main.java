@@ -55,7 +55,9 @@ public class Main {
     public static void delete() {
         System.out.println("nhap id muon xoa:");
         int id = Integer.parseInt(scanner.nextLine());
-        products[id - 1] = null;
+        for (int i = id-1; i <products.length-1 ; i++) {
+            products[i]=products[i+1];
+        }
 
     }
 
