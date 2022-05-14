@@ -14,6 +14,7 @@ public class Main {
         count = 3;
     }
 
+
     public static void add() {
         System.out.println("Enter name:");
         String name = scanner.nextLine();
