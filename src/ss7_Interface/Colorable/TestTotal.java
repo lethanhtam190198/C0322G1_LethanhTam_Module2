@@ -13,9 +13,9 @@ public class TestTotal {
         shapes[0] = new Circle(height, "yellow", true);
         shapes[1] = new Rectangle(height, width, "red", true);
         shapes[2] = new Square("red", true, 6);
-        for (Shape shape:shapes) {
+        for (Shape shape : shapes) {
             System.out.println(shape.toString());
-            if(shape instanceof Square){
+            if (shape instanceof Square) {
                 ((Square) shape).howtoColor();
             }
         }

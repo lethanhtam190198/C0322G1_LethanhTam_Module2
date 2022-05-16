@@ -14,8 +14,9 @@ public class Square extends Shape implements Resizeable {
         super(color, filled);
         this.heigth = heigth;
     }
-    public double getArea(){
-        return Math.pow(heigth,2);
+
+    public double getArea() {
+        return Math.pow(heigth, 2);
     }
 
     @Override

@@ -43,7 +43,7 @@ public class Main {
                     System.out.println("nhap diem");
                     double point = Double.parseDouble(scanner.nextLine());
                     Student student = new Student(id, name, age, true, point);
-                    listPerson[count] = (Student) student;
+                    listPerson[count] = (Person) student;
                     count++;
                     display();
                     break;
