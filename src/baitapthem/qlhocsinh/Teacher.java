@@ -2,7 +2,8 @@ package baitapthem.qlhocsinh;
 
 public class Teacher extends Person {
     public double salary;
-    public Teacher(){
+
+    public Teacher() {
 
     }
 

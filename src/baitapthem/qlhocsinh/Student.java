@@ -2,7 +2,8 @@ package baitapthem.qlhocsinh;
 
 public class Student extends Person {
     public double point;
-    public Student(){
+
+    public Student() {
 
     }
 

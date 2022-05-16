@@ -94,8 +94,7 @@ public class Main {
                     for (int i = 0; i < listPerson.length; i++) {
                         if (listPerson[i] != null && listPerson[i].getName().contains(search)) {
                             System.out.println(listPerson[i]);
-                        }
-                        else {
+                        } else {
                             System.out.println("khong tim thay");
                             break;
                         }
