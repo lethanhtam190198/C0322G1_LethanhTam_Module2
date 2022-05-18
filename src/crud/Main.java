@@ -115,6 +115,8 @@ public class Main {
                     break;
                 case 6:
                     System.exit(0);
+                default:
+                    System.out.println("nhap sai !!!");
             }
         }
         while (true);

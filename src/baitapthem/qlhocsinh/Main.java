@@ -147,6 +147,8 @@ public class Main {
                     break;
                 case 5:
                     System.exit(0);
+                default:
+                    System.out.println("nhap khong hop le!!");
             }
         }
         while (true);
