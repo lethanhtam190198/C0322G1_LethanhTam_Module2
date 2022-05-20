@@ -1,15 +1,15 @@
 package ss12_JavaCollectionFramework;
 
-import java.util.Scanner;
+import java.util.Comparator;
 
-public class ProductManagement {
+public class ProductManagement implements Comparator<ProductManagement> {
     private String nameProduct;
     private int id;
-    private double price;
+    private int price;
     private double amout;
     private String production;
 
-    public ProductManagement(String nameProduct, int id, double price, double amout, String production) {
+    public ProductManagement(String nameProduct, int id, int price, double amout, String production) {
         this.nameProduct = nameProduct;
         this.id = id;
         this.price = price;
@@ -36,11 +36,11 @@ public class ProductManagement {
         this.id = id;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -68,5 +68,10 @@ public class ProductManagement {
                 ", amout=" + amout +
                 ", production=" + production +
                 '\n';
+    }
+
+    @Override
+    public int compare(ProductManagement o1, ProductManagement o2) {
+        return 0;
     }
 }

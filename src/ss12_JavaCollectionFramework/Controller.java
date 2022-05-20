@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Controller {
     public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         SystemProduct systemProduct = new SystemProduct();
         do {
@@ -14,7 +15,8 @@ public class Controller {
             System.out.println("4.Update");
             System.out.println("5.Find Name");
             System.out.println("6.Sort Ascending");
-            System.out.println("6.Exit");
+            System.out.println("7.Sort Descending");
+            System.out.println("8.Exit");
             System.out.println("nhap lua chon:");
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
@@ -39,10 +41,16 @@ public class Controller {
                     systemProduct.findName();
                     break;
                 case 6:
-                    System.out.println("Sort Ascending");
-                    systemProduct.SortAscending();
+                    System.out.println("Sort Ascending By Price");
+                    systemProduct.SortAscendingByPrice();
+                    break;
                 case 7:
+                    System.out.println("Sort Descending By Price ");
+                    systemProduct.sortDescendingByPrice();
+                    break;
+                case 8:
                     System.exit(0);
+
                 default:
                     System.out.println("nhap sai !!!");
             }
