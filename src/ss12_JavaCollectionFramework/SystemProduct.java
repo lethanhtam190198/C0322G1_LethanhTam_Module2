@@ -91,7 +91,7 @@ public class SystemProduct extends ProductManagement implements IProduct {
     }
 
     @Override
-    public void SortAscendingByPrice() {
+    public void sortAscendingByPrice() {
         Collections.sort(productManagements, new Comparator<ProductManagement>() {
             @Override
             public int compare(ProductManagement o1, ProductManagement o2) {

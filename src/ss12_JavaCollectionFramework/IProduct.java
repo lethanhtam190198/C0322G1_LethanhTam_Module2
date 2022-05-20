@@ -11,7 +11,7 @@ public interface IProduct {
 
     void findName();
 
-    void SortAscendingByPrice();
+    void sortAscendingByPrice();
 
     void sortDescendingByPrice();
 

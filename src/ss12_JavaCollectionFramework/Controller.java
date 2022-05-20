@@ -42,7 +42,7 @@ public class Controller {
                     break;
                 case 6:
                     System.out.println("Sort Ascending By Price");
-                    systemProduct.SortAscendingByPrice();
+                    systemProduct.sortAscendingByPrice();
                     break;
                 case 7:
                     System.out.println("Sort Descending By Price ");
