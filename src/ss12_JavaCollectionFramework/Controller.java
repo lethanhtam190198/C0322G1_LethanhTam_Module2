@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Controller {
     public static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
         SystemProduct systemProduct = new SystemProduct();
         do {

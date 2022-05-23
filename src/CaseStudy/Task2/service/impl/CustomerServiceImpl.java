@@ -1,8 +1,14 @@
 package CaseStudy.Task2.service.impl;
 
+import CaseStudy.Task2.models.person.Customer;
+import CaseStudy.Task2.models.person.Employee;
 import CaseStudy.Task2.service.CustomerService;
 
-public class CustomerServiceImpl implements CustomerService {
+import java.util.ArrayList;
+
+public class CustomerServiceImpl extends Customer implements CustomerService {
+    public static ArrayList<Employee> employees = new ArrayList<>();
+    public static int count;
     @Override
     public void add() {
 

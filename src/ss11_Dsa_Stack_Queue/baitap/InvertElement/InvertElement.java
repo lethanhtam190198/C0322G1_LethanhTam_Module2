@@ -14,15 +14,15 @@ public class InvertElement {
         for (int i = 0; i < list.length; i++) {
             stack.push(list[i]);
         }
-        System.out.println("Before" + stack);
+//        System.out.println("Before" + stack);
         for (int i = 0; i < list.length; i++) {
-            stack.pop();
+            list[i]=stack.pop();
         }
 
-        for (int i = list.length - 1; i >= 0; i--) {
-            stack.add(list[i]);
-        }
-        System.out.println("After" + stack);
+//        for (int i = list.length - 1; i >= 0; i--) {
+//            stack.add(list[i]);
+//        }
+        System.out.println("After" + Arrays.toString(list));
 
     }
 }
