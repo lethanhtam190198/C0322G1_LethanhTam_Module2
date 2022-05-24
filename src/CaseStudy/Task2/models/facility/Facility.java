@@ -1,5 +1,8 @@
 package CaseStudy.Task2.models.facility;
 
+import java.util.LinkedHashMap;
+import java.util.Scanner;
+
 public abstract class Facility {
     String serviceName;
     double acreage;
@@ -57,6 +60,7 @@ public abstract class Facility {
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
+
 
     @Override
     public String toString() {

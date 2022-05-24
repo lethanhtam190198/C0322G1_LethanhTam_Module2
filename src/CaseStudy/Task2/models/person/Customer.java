@@ -1,6 +1,9 @@
 package CaseStudy.Task2.models.person;
 
+import java.util.Scanner;
+
 public class Customer extends Person {
+    public static Scanner scanner = new Scanner(System.in);
     private int customerCode;
     private String typeOfCustomer;
 
@@ -27,8 +30,36 @@ public class Customer extends Person {
     }
 
     public String getTypeOfCustomer() {
-        return typeOfCustomer;
+        do {
+            System.out.println("1. Diamond\n" +
+                    "2. Platinum\n" +
+                    "3. Gold\n" +
+                    "4. Silver\n" +
+                    "5. Member\n" +
+                    "Your choose  ");
+            int chanel = Integer.parseInt(scanner.nextLine());
+            if (chanel >= 1 && chanel <= 5) {
+                switch (chanel) {
+                    case 1:
+                        return "Diamond";
+                    case 2:
+                        return "Platinum";
+                    case 3:
+                        return "Gold";
+                    case 4:
+                        return "Silver";
+                    case 5:
+                        return " Member";
+
+                }
+                break;
+            } else {
+                System.out.println("Please Retype");
+            }
+        } while (true);
+        return " ";
     }
+
 
     public void setTypeOfCustomer(String typeOfCustomer) {
         this.typeOfCustomer = typeOfCustomer;
@@ -36,8 +67,8 @@ public class Customer extends Person {
 
     @Override
     public String toString() {
-        return "Customer=[" + super.toString()+
-                "customerCode=" + customerCode +
+        return "Customer=[" + super.toString() +
+                ", customerCode=" + customerCode +
                 ", typeOfCustomer='" + typeOfCustomer +
                 ']';
     }

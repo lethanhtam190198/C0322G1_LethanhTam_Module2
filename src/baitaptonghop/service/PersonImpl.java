@@ -15,8 +15,8 @@ public class PersonImpl implements Service {
     static {
         staffPersonArrayList.add(new NvCongNhat("tam", "1998", "dn", 20));
         staffPersonArrayList.add(new NvSanXuat("duc", "1997", "ht", 20));
-        staffPersonArrayList.add(new NvQuanLi("dong", "1996", "dn", 20, 2));
-        staffPersonArrayList.add(new NvQuanLi("hai", "1990", "qn", 20, 5));
+        staffPersonArrayList.add(new NvQuanLi("zong", "1996", "dn", 20, 2));
+        staffPersonArrayList.add(new NvQuanLi("hai", "1990", "qn", 20, 2));
         staffPersonArrayList.add(new NvCongNhat("tuan", "1991", "qn", 20));
         staffPersonArrayList.add(new NvCongNhat("aa", "1999", "aa", 10));
 

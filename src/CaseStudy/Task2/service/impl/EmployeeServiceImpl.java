@@ -81,10 +81,6 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
                 String email = scanner.nextLine();
                 System.out.println("nhập mã Nv:");
                 int employeeCode = Integer.parseInt(scanner.nextLine());
-//                System.out.println("nhập trình độ:");
-//                String level = scanner.nextLine();
-//                System.out.println("nhập vị trí:");
-//                String location = scanner.nextLine();
                 System.out.println("nhập lương:");
                 double salary = Double.parseDouble(scanner.nextLine());
                 employees.get(i).setFirstNameAndLastName(firstNameAndLastName);

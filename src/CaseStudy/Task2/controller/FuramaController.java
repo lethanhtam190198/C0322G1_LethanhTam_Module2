@@ -1,6 +1,10 @@
 package CaseStudy.Task2.controller;
 
+import CaseStudy.Task2.models.facility.Facility;
+import CaseStudy.Task2.models.facility.Villa;
+import CaseStudy.Task2.service.impl.CustomerServiceImpl;
 import CaseStudy.Task2.service.impl.EmployeeServiceImpl;
+import CaseStudy.Task2.service.impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -8,6 +12,8 @@ public class FuramaController {
 
     public static void displayMainMenu() {
         EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
+        CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
+        FacilityServiceImpl facilityService= new FacilityServiceImpl();
         do {
             Scanner scanner = new Scanner(System.in);
             System.out.println("-----------------Menu--------------------\n" +
@@ -61,13 +67,21 @@ public class FuramaController {
                         int choose2 = Integer.parseInt(scanner.nextLine());
                         switch (choose2) {
                             case 1:
+                                customerServiceImpl.display();
+                                break;
                             case 2:
+                                customerServiceImpl.add();
+                                customerServiceImpl.display();
+                                break;
                             case 3:
+                                customerServiceImpl.update();
+                                customerServiceImpl.display();
+                                break;
                             case 4:
                                 displayMainMenu();
                                 break;
                         }
-                        break;
+
                     } while (true);
                 case 3:
                     System.out.println("1.Display list facility\n" +
@@ -77,7 +91,10 @@ public class FuramaController {
                     int choose3 = Integer.parseInt(scanner.nextLine());
                     switch (choose3) {
                         case 1:
+
                         case 2:
+                            facilityService.add();
+                            break;
                         case 3:
                         case 4:
                             displayMainMenu();
