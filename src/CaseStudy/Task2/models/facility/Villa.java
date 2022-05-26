@@ -47,41 +47,13 @@ public class Villa extends Facility {
         this.numberOfFloors = numberOfFloors;
     }
 
-    public static String getrentalType() {
-        Scanner scanner = new Scanner(System.in);
-        do {
-            System.out.println("1. Theo giờ\n" +
-                    "2. Theo ngày\n" +
-                    "3. Theo tháng\n" +
-                    "4. Theo năm\n" +
-                    "Your choose  ");
-            int choose = Integer.parseInt(scanner.nextLine());
-            if (choose >= 1 && choose <= 4) {
-                switch (choose) {
-                    case 1:
-                        return "Theo giờ";
-                    case 2:
-                        return "Theo ngày";
-                    case 3:
-                        return "Theo tháng";
-                    case 4:
-                        return "Theo năm";
-
-                }
-                break;
-            } else {
-                System.out.println("Please Retype");
-            }
-        } while (true);
-        return " ";
-    }
 
     @Override
     public String toString() {
-        return "Villa{" + super.toString() +
-                "roomStandard='" + roomStandard + '\'' +
+        return "Villa[" + super.toString() +
+                ", roomStandard='" + roomStandard +
                 ", swimmingPoolArea=" + swimmingPoolArea +
                 ", numberOfFloors=" + numberOfFloors +
-                '}';
+                ']';
     }
 }

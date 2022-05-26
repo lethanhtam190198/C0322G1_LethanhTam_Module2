@@ -62,14 +62,13 @@ public abstract class Facility {
     }
 
 
+
     @Override
     public String toString() {
-        return "Facility{" +
-                "serviceName='" + serviceName + '\'' +
+        return "serviceName='" + serviceName +
                 ", acreage=" + acreage +
                 ", rentalCosts=" + rentalCosts +
                 ", numberOfPeople=" + numberOfPeople +
-                ", rentalType='" + rentalType + '\'' +
-                '}';
+                ", rentalType='" + rentalType ;
     }
 }

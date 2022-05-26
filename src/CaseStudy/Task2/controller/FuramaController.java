@@ -84,21 +84,26 @@ public class FuramaController {
 
                     } while (true);
                 case 3:
-                    System.out.println("1.Display list facility\n" +
-                            "2.Add new facility\n" +
-                            "3.Display list facility maintenance\n" +
-                            "4.Return main menu");
-                    int choose3 = Integer.parseInt(scanner.nextLine());
-                    switch (choose3) {
-                        case 1:
-
-                        case 2:
-                            facilityService.add();
-                            break;
-                        case 3:
-                        case 4:
-                            displayMainMenu();
-                            break;
+                    do {
+                        System.out.println("---------Facility Management---------\n"+
+                                "1.Display list facility\n" +
+                                "2.Add new facility\n" +
+                                "3.Display list facility maintenance\n" +
+                                "4.Return main menu");
+                        int choose3 = Integer.parseInt(scanner.nextLine());
+                        switch (choose3) {
+                            case 1:
+                                facilityService.display();
+                                break;
+                            case 2:
+                                facilityService.add();
+                                facilityService.display();
+                                break;
+                            case 3:
+                            case 4:
+                                displayMainMenu();
+                                break;
+                        }
                     }
                     while (true) ;
                 case 4:

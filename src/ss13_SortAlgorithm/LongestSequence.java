@@ -11,8 +11,7 @@ public class LongestSequence {
         System.out.print("Nhập chuỗi: ");
         String string = input.nextLine();
         for (int i = 0; i < string.length(); i++) {
-            if (list.size() > 1 && string.charAt(i) <= list.getLast() &&
-                    list.contains(string.charAt(i))) {
+            if (list.size() > 1 && string.charAt(i) <= list.getLast() && list.contains(string.charAt(i))) {
                 list.clear();
             }
             list.add(string.charAt(i));

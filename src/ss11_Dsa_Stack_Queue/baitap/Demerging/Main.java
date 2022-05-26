@@ -16,7 +16,7 @@ public class Main {
         emerging[4]= new Demerging("d",false,199);
         System.out.println(emerging.toString());
         for (Demerging item:emerging) {
-            if(item.getGender()){
+            if(item.getGender()==true){
                 queueMale.add(item);
             }
             else{
