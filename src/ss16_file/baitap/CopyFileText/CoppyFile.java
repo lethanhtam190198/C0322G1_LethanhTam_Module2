@@ -17,9 +17,7 @@ public class CoppyFile {
         File file = new File(pathFile);
         List<String> list = new ArrayList<>();
         try (FileReader fileReader1 = new FileReader(file);
-             BufferedReader bufferedReader = new BufferedReader(fileReader1);
-
-        ) {
+             BufferedReader bufferedReader = new BufferedReader(fileReader1);) {
             String line = " ";
 
             while ((line = bufferedReader.readLine()) != null) {
