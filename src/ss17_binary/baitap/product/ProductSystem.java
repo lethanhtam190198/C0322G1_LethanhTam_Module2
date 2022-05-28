@@ -7,12 +7,15 @@ import java.util.Scanner;
 public class ProductSystem extends ProductManagement implements IProduct {
     public static Scanner scanner = new Scanner(System.in);
     public static List<ProductManagement> productManagements = new ArrayList<>();
-    public static int count = 1;
+    public static int count;
 
 
     @Override
     public void add() {
         try {
+            productManagements = (List<ProductManagement>) ReadAndWriteProduct.readProduct("src/ss17_binary/baitap/text.txt");
+
+            count= productManagements.size()+1;
             System.out.println("Nhập nameProduct:");
             String nameProduct = scanner.nextLine();
             System.out.println("Nhập manufacturingCompany:");
@@ -20,7 +23,6 @@ public class ProductSystem extends ProductManagement implements IProduct {
             System.out.println("nhập price:");
             double price = Double.parseDouble(scanner.nextLine());
             productManagements.add(new ProductManagement(count, nameProduct, manufacturingCompany, price));
-            count++;
             ReadAndWriteProduct.writeProduct("src/ss17_binary/baitap/text.txt", productManagements);
         } catch (NumberFormatException e) {
             e.printStackTrace();
