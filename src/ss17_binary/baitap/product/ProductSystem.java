@@ -13,8 +13,6 @@ public class ProductSystem extends ProductManagement implements IProduct {
     @Override
     public void add() {
         try {
-            productManagements = (List<ProductManagement>) ReadAndWriteProduct.readProduct("src/ss17_binary/baitap/text.txt");
-
             count= productManagements.size()+1;
             System.out.println("Nhập nameProduct:");
             String nameProduct = scanner.nextLine();
@@ -23,7 +21,7 @@ public class ProductSystem extends ProductManagement implements IProduct {
             System.out.println("nhập price:");
             double price = Double.parseDouble(scanner.nextLine());
             productManagements.add(new ProductManagement(count, nameProduct, manufacturingCompany, price));
-            ReadAndWriteProduct.writeProduct("src/ss17_binary/baitap/text.txt", productManagements);
+            ReadAndWriteProduct.writeProduct("src/ss17_binary/baitap/product/text.txt", productManagements);
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
@@ -32,7 +30,7 @@ public class ProductSystem extends ProductManagement implements IProduct {
     @Override
     public void display() {
         try {
-            productManagements = (List<ProductManagement>) ReadAndWriteProduct.readProduct("src/ss17_binary/baitap/text.txt");
+            productManagements = (List<ProductManagement>) ReadAndWriteProduct.readProduct("src/ss17_binary/baitap/product/text.txt");
             System.out.println(productManagements.toString());
         } catch (Exception e) {
             e.printStackTrace();
