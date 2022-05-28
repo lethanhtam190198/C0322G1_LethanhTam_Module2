@@ -1,4 +1,4 @@
-package ss17_binary.baitap;
+package ss17_binary.baitap.product;
 
 import java.util.ArrayList;
 import java.util.List;
