@@ -57,7 +57,7 @@ public class ProductManagement implements Serializable {
                 ", nameProduct='" + nameProduct +
                 ", manufacturingCompany='" + manufacturingCompany +
                 ", price=" + price +
-                '}'+
+                '}' +
                 '\n';
     }
 }

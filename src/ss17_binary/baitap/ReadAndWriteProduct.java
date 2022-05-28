@@ -14,8 +14,7 @@ public class ReadAndWriteProduct {
             oos.writeObject(productManagements);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 oos.close();
             } catch (IOException e) {
@@ -38,8 +37,7 @@ public class ReadAndWriteProduct {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 ois.close();
             } catch (IOException e) {
