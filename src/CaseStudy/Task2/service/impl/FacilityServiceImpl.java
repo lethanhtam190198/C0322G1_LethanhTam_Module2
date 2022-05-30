@@ -65,7 +65,12 @@ public class FacilityServiceImpl implements FacilityService {
                 "3.Add New Room\n" +
                 "4.Back to menu");
         System.out.println("Nhập lựa chọn:");
-        int choose = Integer.parseInt(scanner.nextLine());
+        int choose = 0;
+        try {
+           choose = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Nhap lai!!!!");
+        }
         switch (choose) {
             case 1:
                 System.out.println("--------Add New Villa-------");
@@ -87,8 +92,6 @@ public class FacilityServiceImpl implements FacilityService {
                 count++;
                 break;
             case 2:
-                // public House(String serviceName, double acreage, double rentalCosts,
-                // int numberOfPeople, String rentalType, String roomStandard, int numberOfFloors) {
                 System.out.println("--------Add New House-------");
                 System.out.println("Nhập Service Name:");
                 String nameService1 = scanner.nextLine();
@@ -106,8 +109,6 @@ public class FacilityServiceImpl implements FacilityService {
                 count++;
                 break;
             case 3:
-                //    public Room(String serviceName, double acreage, double rentalCosts,
-                //    int numberOfPeople, String rentalType, String freeService) {
                 System.out.println("--------Add New Room-------");
                 System.out.println("Nhập Service Name:");
                 String nameService2 = scanner.nextLine();

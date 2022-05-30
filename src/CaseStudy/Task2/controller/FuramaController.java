@@ -10,11 +10,13 @@ import java.util.Scanner;
 
 public class FuramaController {
 
+
     public static void displayMainMenu() {
         EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
         CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
         FacilityServiceImpl facilityService= new FacilityServiceImpl();
         do {
+
             Scanner scanner = new Scanner(System.in);
             System.out.println("-----------------Menu--------------------\n" +
                     "1.Employee Management\n" +
@@ -24,7 +26,12 @@ public class FuramaController {
                     "5.Promotion Management\n" +
                     "6.Exit");
             System.out.println("Plase Choose:");
-            int choose = Integer.parseInt(scanner.nextLine());
+            int choose = 0;
+            try {
+                choose = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Nhap lai!!!!");
+            }
             switch (choose) {
                 case 1:
                     do {
@@ -97,7 +104,6 @@ public class FuramaController {
                                 break;
                             case 2:
                                 facilityService.add();
-                                facilityService.display();
                                 break;
                             case 3:
                             case 4:
@@ -140,9 +146,8 @@ public class FuramaController {
                     break;
                 case 6:
                     System.exit(0);
-                default:
-                    System.out.println("Nhập lại:");
             }
+
         } while (true);
 
     }
