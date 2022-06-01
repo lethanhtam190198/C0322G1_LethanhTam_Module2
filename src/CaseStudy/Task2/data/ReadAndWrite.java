@@ -1,4 +1,4 @@
-package CaseStudy.Task2.service;
+package CaseStudy.Task2.data;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -35,5 +35,19 @@ public class ReadAndWrite {
             e.printStackTrace();
         }
         return list;
+    }
+    public static void clearFile(String pathFile) throws IOException {
+        File file = new File(pathFile);
+        FileWriter fileWriter = null;
+        BufferedWriter bufferedWriter = null;
+        try {
+            fileWriter = new FileWriter(file,false);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write("");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            bufferedWriter.close();
+        }
     }
 }

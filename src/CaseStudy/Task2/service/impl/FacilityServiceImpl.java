@@ -14,14 +14,12 @@ import java.util.Scanner;
 public class FacilityServiceImpl implements FacilityService {
     public static Scanner scanner = new Scanner(System.in);
     public static int count;
-    public static Map<Integer, Facility> facilityService = new LinkedHashMap<>();
+    public static Map<Facility, Integer> facilityService = new LinkedHashMap<>();
 
     static {
-        facilityService.put(1, new Villa("villa", 150, 3000000, 15, "thue tron goi", "2DK", 45, 3));
-        facilityService.put(2, new Room("room", 35, 150000, 6, "thue tron goi", "2DK"));
-        facilityService.put(3, new House("house", 150, 3000000, 15, "thue tron goi", "3DK", 2));
-        count = 4;
-
+        facilityService.put( new Villa("villa", 150, 3000000, 15, "thue tron goi", "DK", 45, 3),1);
+        facilityService.put( new Room("room", 35, 150000, 6, "thue tron goi", "DK"),2);
+        facilityService.put( new House("house", 150, 3000000, 15, "thue tron goi", "DK", 2),3);
     }
 
 
@@ -88,7 +86,7 @@ public class FacilityServiceImpl implements FacilityService {
                 double swimmingPoolArea = Double.parseDouble(scanner.nextLine());
                 System.out.println("Nhập numberOfFloors");
                 int numberOfFloors = Integer.parseInt(scanner.nextLine());
-                facilityService.put(count, new Villa(nameService, acreage, rentalCosts, numberOfPeople, getRentalType(), roomStandard, swimmingPoolArea, numberOfFloors));
+                facilityService.put( new Villa(nameService, acreage, rentalCosts, numberOfPeople, getRentalType(), roomStandard, swimmingPoolArea, numberOfFloors),0);
                 count++;
                 break;
             case 2:
@@ -105,7 +103,7 @@ public class FacilityServiceImpl implements FacilityService {
                 String roomStandard1 = scanner.nextLine();
                 System.out.println("Nhập numberOfFloors");
                 int numberOfFloors1 = Integer.parseInt(scanner.nextLine());
-                facilityService.put(count + 1, new House(nameService1, acreage1, rentalCosts1, numberOfPeople1, getRentalType(), roomStandard1, numberOfFloors1));
+                facilityService.put( new House(nameService1, acreage1, rentalCosts1, numberOfPeople1, getRentalType(), roomStandard1, numberOfFloors1),0);
                 count++;
                 break;
             case 3:
@@ -120,7 +118,7 @@ public class FacilityServiceImpl implements FacilityService {
                 int numberOfPeople2 = Integer.parseInt(scanner.nextLine());
                 System.out.println("Nhập freeService(DV miễn phí đi kèm):");
                 String freeService = scanner.nextLine();
-                facilityService.put(count + 1, new Room(nameService2, acreage2, rentalCosts2, numberOfPeople2, getRentalType(), freeService));
+                facilityService.put( new Room(nameService2, acreage2, rentalCosts2, numberOfPeople2, getRentalType(), freeService),0);
                 count++;
                 break;
         }
@@ -129,8 +127,8 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void display() {
-        for (Map.Entry<Integer, Facility> item : facilityService.entrySet()) {
-            System.out.println(item.getKey() + " " + item.getValue());
+        for (Map.Entry<Facility, Integer> item : facilityService.entrySet()) {
+            System.out.println( item.getValue()+" " +item.getKey() );
         }
 
     }

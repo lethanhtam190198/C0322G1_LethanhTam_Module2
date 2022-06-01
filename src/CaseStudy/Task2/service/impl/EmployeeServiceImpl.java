@@ -1,95 +1,176 @@
 package CaseStudy.Task2.service.impl;
 
+import CaseStudy.Task2.data.ReadAndWrite;
 import CaseStudy.Task2.models.person.Employee;
 import CaseStudy.Task2.service.EmployeeService;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl extends Employee implements EmployeeService {
-    public static ArrayList<Employee> employees = new ArrayList<>();
-    public static int count;
-
-    static {
-        employees.add(new Employee("tâm", 1998, "nam", 1, 191919191, "tam@gmail.com", 1, "ĐH", "lễ tân", 1500000));
-        employees.add(new Employee("hải", 1988, "nam", 2, 12121212, "hai@gmail.com", 2, "ĐH", "giám đốc", 1000000000));
-        employees.add(new Employee("đức", 1997, "nam", 3, 333333, "duc@gmail.com", 2, "cd", "bảo vệ", 222222));
-        employees.add(new Employee("abc", 1988, "nam", 4, 144444, "abc@gmail.com", 2, "cd", "ảo vệ", 333333));
-        count = 5;
-    }
-
+    List<String[]> list = new ArrayList<>();
+    ArrayList<Employee> employeesList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
     @Override
-    public void add() {
+    public void add() throws IOException {
+        list = ReadAndWrite.readerFile("src/CaseStudy/Task2/data/dataemployee.csv");
+        employeesList.clear();
+        for (String[] item : list) {
+            Employee employee = new
+                    Employee(item[0], Integer.parseInt(item[1]), item[2], Integer.parseInt(item[3]),
+                    Integer.parseInt(item[4]), item[5], Integer.parseInt(item[6]), item[7], item[8],
+                    Double.parseDouble(item[9]));
+            employeesList.add(employee);
+
+        }
+
         System.out.println("nhập tên:");
         String firstNameAndLastName = scanner.nextLine();
+
         System.out.println("nhập ngày tháng năm sinh:");
         int dayOfBirth = Integer.parseInt(scanner.nextLine());
+
         System.out.println("nhập giới tính");
         String gender = scanner.nextLine();
-        //System.out.println("nhập ID:");
+
         System.out.println("nhập sđt:");
         int phoneNumber = Integer.parseInt(scanner.nextLine());
+
         System.out.println("nhập Email:");
         String email = scanner.nextLine();
+
         System.out.println("nhập mã Nv:");
         int employeeCode = Integer.parseInt(scanner.nextLine());
+
         System.out.println("nhập lương:");
         double salary = Double.parseDouble(scanner.nextLine());
-        employees.add(new Employee(firstNameAndLastName, dayOfBirth, gender, count, phoneNumber, email, employeeCode, getLevel(), getLocation(), salary));
-        count++;
+
+        Employee employee = new Employee(firstNameAndLastName, dayOfBirth, gender, list.size(), phoneNumber, email, employeeCode, getLevel(), getLocation(), salary);
+        employeesList.add(employee);
+
+        String line = firstNameAndLastName + "," +
+                dayOfBirth + "," +
+                gender + "," +
+                list.size() + "," + phoneNumber + "," +
+                email + "," +
+                employeeCode + "," +
+                getLevel2() + "," +
+                getLocation2() + "," +
+                salary;
+        ReadAndWrite.writeFile("src/CaseStudy/Task2/data/dataemployee.csv", line);
+        System.out.println("Da them thanh cong");
     }
 
     @Override
     public void display() {
-        for (Employee item : employees) {
-            System.out.println(item);
+        list = ReadAndWrite.readerFile("src/CaseStudy/Task2/data/dataemployee.csv");
+        employeesList.clear();
+        for (String[] item : list) {
+            Employee employee = new
+                    Employee(item[0], Integer.parseInt(item[1]), item[2], Integer.parseInt(item[3]),
+                    Integer.parseInt(item[4]), item[5], Integer.parseInt(item[6]), item[7],
+                    item[8], Double.parseDouble(item[9]));
+            employeesList.add(employee);
         }
+        System.out.println("Danh sach nhan vien:");
+        for (Employee employee : employeesList) {
+            System.out.println(employee);
+        }
+
     }
 
     @Override
     public void delete() {
-        System.out.println("nhập id muốn xoá:");
-        int id = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < employees.size(); i++) {
-            if (id == employees.get(i).getId()) {
-                employees.remove(employees.get(i));
-            }
-        }
     }
 
     @Override
-    public void update() {
-        System.out.println("nhập id muốn update:");
-        int update = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < employees.size(); i++) {
-            if (update == employees.get(i).getId()) {
-                System.out.println("nhập tên:");
-                String firstNameAndLastName = scanner.nextLine();
-                System.out.println("nhập ngày tháng năm sinh:");
-                int dayOfBirth = Integer.parseInt(scanner.nextLine());
-                System.out.println("nhập giới tính");
-                String gender = scanner.nextLine();
-                System.out.println("nhập sđt:");
-                int phoneNumber = Integer.parseInt(scanner.nextLine());
-                System.out.println("nhập Email:");
-                String email = scanner.nextLine();
-                System.out.println("nhập mã Nv:");
-                int employeeCode = Integer.parseInt(scanner.nextLine());
-                System.out.println("nhập lương:");
-                double salary = Double.parseDouble(scanner.nextLine());
-                employees.get(i).setFirstNameAndLastName(firstNameAndLastName);
-                employees.get(i).setDayOfBirth(dayOfBirth);
-                employees.get(i).setGender(gender);
-                employees.get(i).setPhoneNumber(phoneNumber);
-                employees.get(i).setEmail(email);
-                employees.get(i).setEmployeeCode(employeeCode);
-                employees.get(i).setLevel(getLevel());
-                employees.get(i).setLocation(getLocation());
-                employees.get(i).setSalary(salary);
-            }
+    public void update() throws IOException {
+        list = ReadAndWrite.readerFile("src/CaseStudy/Task2/data/dataemployee.csv");
+        employeesList.clear();
+        for (String[] item : list) {
+            Employee employee = new Employee(
+                    item[0],
+                    Integer.parseInt(item[1]),
+                    item[2],
+                    Integer.parseInt(item[3]),
+                    Integer.parseInt(item[4]),
+                    item[5],
+                    Integer.parseInt(item[6]),
+                    item[7],
+                    item[8],
+                    Double.parseDouble(item[9]));
+            employeesList.add(employee);
+        }
+        System.out.println("Nhập ID cần update");
+        boolean check = false;
+        int index = 0;
+        int idUpdate;
+        try {
+            idUpdate = Integer.parseInt(scanner.nextLine());
 
+            for (int i = 0; i < employeesList.size(); i++) {
+                if (employeesList.get(i).getId() == idUpdate) {
+                    check = true;
+                    index = i;
+                    break;
+                }
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        if (check) {
+            System.out.println("nhập tên:");
+            String firstNameAndLastName = scanner.nextLine();
+
+            System.out.println("nhập ngày tháng năm sinh:");
+            int dayOfBirth = Integer.parseInt(scanner.nextLine());
+
+            System.out.println("nhập giới tính");
+            String gender = scanner.nextLine();
+
+            System.out.println("nhập sđt:");
+            int phoneNumber = Integer.parseInt(scanner.nextLine());
+
+            System.out.println("nhập Email:");
+            String email = scanner.nextLine();
+
+            System.out.println("nhập mã Nv:");
+            int employeeCode = Integer.parseInt(scanner.nextLine());
+
+            System.out.println("nhập lương:");
+            double salary = Double.parseDouble(scanner.nextLine());
+
+            employeesList.get(index).setFirstNameAndLastName(firstNameAndLastName);
+            employeesList.get(index).setDayOfBirth(dayOfBirth);
+            employeesList.get(index).setGender(gender);
+            employeesList.get(index).setPhoneNumber(phoneNumber);
+            employeesList.get(index).setEmail(email);
+            employeesList.get(index).setEmployeeCode(employeeCode);
+            employeesList.get(index).setLevel(getLevel());
+            employeesList.get(index).setLocation(getLocation());
+            employeesList.get(index).setSalary(salary);
+            ReadAndWrite.clearFile("src/CaseStudy/Task2/data/dataemployee.csv");
+            for(Employee item:employeesList){
+                String line =
+                        item.getFirstNameAndLastName() + "," +
+                                item.getDayOfBirth() + "," +
+                                item.getGender() + "," +
+                                item.getId() + "," +
+                                item.getPhoneNumber() + "," +
+                                item.getEmail() + "," +
+                                item.getEmployeeCode() + "," +
+                                item.getLevel2() + "," +
+                                item.getLocation2() + "," +
+                                item.getSalary();
+                ReadAndWrite.writeFile("src/CaseStudy/Task2/data/dataemployee.csv", line);
+            }
+            System.out.println("Da sửa thanh cong");
+        }
+        else {
+            System.out.println("ID ko tồn tại");
         }
     }
 

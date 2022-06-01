@@ -2,9 +2,10 @@ package CaseStudy.Task2.models.person;
 
 import CaseStudy.Task2.service.EmployeeService;
 
+import java.io.IOException;
 import java.util.Scanner;
 
-public class Employee extends Person implements EmployeeService {
+public class Employee extends Person {
     public static Scanner scanner = new Scanner(System.in);
     private int employeeCode;
     private String level;
@@ -39,30 +40,41 @@ public class Employee extends Person implements EmployeeService {
     }
 
     public String getLevel() {
-        System.out.println("----------Chọn Trình Độ------------"+
+        System.out.println("----------Chọn Trình Độ------------" +
                 "\n1.Trung cấp " +
                 "\n2.Cao đẳng" +
                 "\n3.Đại học " +
                 "\n4.sau đại học");
+        boolean isValid;
         do {
             int choose = Integer.parseInt(scanner.nextLine());
-            if (choose >= 1 && choose <= 4) {
+            isValid = choose >= 1 && choose <= 4;
+            if (isValid) {
                 switch (choose) {
                     case 1:
-                        return "Trung cấp";
+                        level = "Trung cấp";
+                        return level;
                     case 2:
-                        return "Cao đẳng";
+                        level = "Cao đẳng";
+                        return level;
                     case 3:
-                        return "Đại học";
+                        level = "Đại học";
+                        return level;
                     case 4:
-                        return "Sau Đại học";
+                        level = "Sau Đại học";
+                        return level;
                 }
                 break;
             } else {
                 System.out.println("Mời bạn cọn đúng theo yêu cầu: ");
             }
         } while (true);
-        return " ";
+        return "";
+    }
+
+    public String getLevel2() {
+        return level;
+
     }
 
     public void setLevel(String level) {
@@ -70,36 +82,47 @@ public class Employee extends Person implements EmployeeService {
     }
 
     public String getLocation() {
-        System.out.println("------------Chọn Vị Trí-----------"+
+        System.out.println("------------Chọn Vị Trí-----------" +
                 "\n1.Lễ tân " +
                 "\n2.Phục vụ" +
                 "\n3.Chuyên viên" +
-                "\n4.Giám sát "+
-                "\n5.Quản lí "+
+                "\n4.Giám sát " +
+                "\n5.Quản lí " +
                 "\n6.Giám đốc ");
+        boolean isValid;
         do {
             int choose = Integer.parseInt(scanner.nextLine());
-            if (choose >= 1 && choose <= 6) {
+            isValid = choose >= 1 && choose <= 6;
+            if (isValid) {
                 switch (choose) {
                     case 1:
-                        return "Lễ tân";
+                        location = "Lễ tân";
+                        return location;
                     case 2:
-                        return "Phục vụ";
+                        location = "Phục vụ";
+                        return location;
                     case 3:
-                        return "Chuyên viên";
+                        location = "Chuyên viên";
+                        return location;
                     case 4:
-                        return "Giám sát";
+                        location = "Giám sát";
+                        return location;
                     case 5:
-                        return "Quản lí";
+                        location = "Quản lí";
+                        return location;
                     case 6:
-                        return "Giám đốc";
+                        location = "Giám đốc";
+                        return location;
                 }
                 break;
             } else {
                 System.out.println("Mời bạn chọn đúng theo yêu cầu: ");
             }
         } while (true);
-        return " ";
+        return "";
+    }
+    public String getLocation2(){
+        return location;
     }
 
     public void setLocation(String location) {
@@ -124,28 +147,4 @@ public class Employee extends Person implements EmployeeService {
                 ", salary=" + salary + "]";
     }
 
-    @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void display() {
-
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void update() {
-
-    }
-
-    @Override
-    public void search() {
-
-    }
 }
