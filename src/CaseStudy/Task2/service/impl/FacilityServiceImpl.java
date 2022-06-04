@@ -1,5 +1,6 @@
 package CaseStudy.Task2.service.impl;
 
+import CaseStudy.Task2.data.ReadAndWrite;
 import CaseStudy.Task2.models.facility.Facility;
 import CaseStudy.Task2.models.facility.House;
 import CaseStudy.Task2.models.facility.Room;
@@ -13,14 +14,14 @@ import java.util.Scanner;
 
 public class FacilityServiceImpl implements FacilityService {
     public static Scanner scanner = new Scanner(System.in);
-    public static int count;
+    public static int countVilla=0;
+    public static int countHouse=0;
+    public static int countRoom=0;
     public static Map<Facility, Integer> facilityService = new LinkedHashMap<>();
+    public static Map<Facility, Integer> villaMap = new LinkedHashMap<>();
+    public static Map<Facility, Integer> houseMap = new LinkedHashMap<>();
+    public static Map<Facility, Integer> roomMap = new LinkedHashMap<>();
 
-    static {
-        facilityService.put( new Villa("villa", 150, 3000000, 15, "thue tron goi", "DK", 45, 3),1);
-        facilityService.put( new Room("room", 35, 150000, 6, "thue tron goi", "DK"),2);
-        facilityService.put( new House("house", 150, 3000000, 15, "thue tron goi", "DK", 2),3);
-    }
 
 
     public static String getRentalType() {
@@ -71,6 +72,7 @@ public class FacilityServiceImpl implements FacilityService {
         }
         switch (choose) {
             case 1:
+                ReadAndWrite.readerFile("src/CaseStudy/Task2/data/villa.csv");
                 System.out.println("--------Add New Villa-------");
                 System.out.println("Nhập Service Name:");
                 String nameService = scanner.nextLine();
@@ -86,8 +88,8 @@ public class FacilityServiceImpl implements FacilityService {
                 double swimmingPoolArea = Double.parseDouble(scanner.nextLine());
                 System.out.println("Nhập numberOfFloors");
                 int numberOfFloors = Integer.parseInt(scanner.nextLine());
-                facilityService.put( new Villa(nameService, acreage, rentalCosts, numberOfPeople, getRentalType(), roomStandard, swimmingPoolArea, numberOfFloors),0);
-                count++;
+                villaMap.put( new Villa(nameService, acreage, rentalCosts, numberOfPeople, getRentalType(), roomStandard, swimmingPoolArea, numberOfFloors),countVilla);
+                countVilla++;
                 break;
             case 2:
                 System.out.println("--------Add New House-------");
@@ -103,8 +105,8 @@ public class FacilityServiceImpl implements FacilityService {
                 String roomStandard1 = scanner.nextLine();
                 System.out.println("Nhập numberOfFloors");
                 int numberOfFloors1 = Integer.parseInt(scanner.nextLine());
-                facilityService.put( new House(nameService1, acreage1, rentalCosts1, numberOfPeople1, getRentalType(), roomStandard1, numberOfFloors1),0);
-                count++;
+                facilityService.put( new House(nameService1, acreage1, rentalCosts1, numberOfPeople1, getRentalType(), roomStandard1, numberOfFloors1),countHouse);
+                countHouse++;
                 break;
             case 3:
                 System.out.println("--------Add New Room-------");
@@ -118,8 +120,8 @@ public class FacilityServiceImpl implements FacilityService {
                 int numberOfPeople2 = Integer.parseInt(scanner.nextLine());
                 System.out.println("Nhập freeService(DV miễn phí đi kèm):");
                 String freeService = scanner.nextLine();
-                facilityService.put( new Room(nameService2, acreage2, rentalCosts2, numberOfPeople2, getRentalType(), freeService),0);
-                count++;
+                facilityService.put( new Room(nameService2, acreage2, rentalCosts2, numberOfPeople2, getRentalType(), freeService),countRoom);
+                countRoom++;
                 break;
         }
     }
@@ -147,4 +149,5 @@ public class FacilityServiceImpl implements FacilityService {
     public void search() {
 
     }
+
 }

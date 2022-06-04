@@ -1,13 +1,10 @@
 package CaseStudy.Task2.models.person;
 
-import CaseStudy.Task2.service.EmployeeService;
-
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Employee extends Person {
     public static Scanner scanner = new Scanner(System.in);
-    private int employeeCode;
+    private String employeeCode;
     private String level;
     private String location;
     private double salary;
@@ -16,14 +13,30 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(int employeeCode, String level, String location, double salary) {
+    @Override
+    public String getInfo() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",
+                super.getFullName(),
+                super.getDayOfBirth(),
+                super.getGender(),
+                super.getId(),
+                super.getPhoneNumber(),
+                super.getEmail(),
+                getEmployeeCode(),
+                getLevel2(),
+                getLocation2(),
+                getSalary());
+
+    }
+
+    public Employee(String employeeCode, String level, String location, double salary) {
         this.employeeCode = employeeCode;
         this.level = level;
         this.location = location;
         this.salary = salary;
     }
 
-    public Employee(String firstNameAndLastName, int dayOfBirth, String gender, int id, int phoneNumber, String email, int employeeCode, String level, String location, double salary) {
+    public Employee(String firstNameAndLastName, String dayOfBirth, String gender, int id, String phoneNumber, String email, String employeeCode, String level, String location, double salary) {
         super(firstNameAndLastName, dayOfBirth, gender, id, phoneNumber, email);
         this.employeeCode = employeeCode;
         this.level = level;
@@ -31,11 +44,11 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
-    public int getEmployeeCode() {
+    public String getEmployeeCode() {
         return employeeCode;
     }
 
-    public void setEmployeeCode(int employeeCode) {
+    public void setEmployeeCode(String employeeCode) {
         this.employeeCode = employeeCode;
     }
 

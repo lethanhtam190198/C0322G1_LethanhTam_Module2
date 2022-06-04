@@ -1,18 +1,18 @@
 package CaseStudy.Task2.models.person;
 
 public abstract class Person {
-    private String firstNameAndLastName;
-    private int dayOfBirth;
+    private String fullName;
+    private String dayOfBirth;
     private String gender;
     private int id;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
     public Person() {
     }
 
-    public Person(String firstNameAndLastName, int dayOfBirth, String gender, int id, int phoneNumber, String email) {
-        this.firstNameAndLastName = firstNameAndLastName;
+    public Person(String firstNameAndLastName, String dayOfBirth, String gender, int id, String phoneNumber, String email) {
+        this.fullName = firstNameAndLastName;
         this.dayOfBirth = dayOfBirth;
         this.gender = gender;
         this.id = id;
@@ -20,19 +20,19 @@ public abstract class Person {
         this.email = email;
     }
 
-    public String getFirstNameAndLastName() {
-        return firstNameAndLastName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstNameAndLastName(String firstNameAndLastName) {
-        this.firstNameAndLastName = firstNameAndLastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public int getDayOfBirth() {
+    public String getDayOfBirth() {
         return dayOfBirth;
     }
 
-    public void setDayOfBirth(int dayOfBirth) {
+    public void setDayOfBirth(String dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
     }
 
@@ -52,11 +52,11 @@ public abstract class Person {
         this.id = id;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -68,9 +68,11 @@ public abstract class Person {
         this.email = email;
     }
 
+    public abstract String getInfo();
+
     @Override
     public String toString() {
-        return "firstNameAndLastName=" + firstNameAndLastName +
+        return "firstNameAndLastName=" + fullName +
                 ", dayOfBirth=" + dayOfBirth +
                 ", gender=" + gender +
                 ", id=" + id +

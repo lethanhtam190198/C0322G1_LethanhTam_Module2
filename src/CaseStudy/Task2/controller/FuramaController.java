@@ -41,24 +41,22 @@ public class FuramaController {
                                 "2.Add new employee\n" +
                                 "3.Edit employee\n" +
                                 "4.Return main menu");
-                        int choose1 = 0;
+                        choose=0;
                         try{
-                            choose1 = Integer.parseInt(scanner.nextLine());
+                            choose = Integer.parseInt(scanner.nextLine());
                         } catch (NumberFormatException e) {
                             System.out.println("Nhap lai!!!!");
                         }
 
-                        switch (choose1) {
+                        switch (choose) {
                             case 1:
                                 employeeServiceImpl.display();
                                 break;
                             case 2:
                                 employeeServiceImpl.add();
-                                employeeServiceImpl.display();
                                 break;
                             case 3:
                                 employeeServiceImpl.update();
-                                employeeServiceImpl.display();
                                 break;
                             case 4:
                                 displayMainMenu();
@@ -73,23 +71,21 @@ public class FuramaController {
                                 "2.Add new customer\n" +
                                 "3.Edit customer\n" +
                                 "4.Return main menu");
-                        int choose2 = 0;
+                        choose=0;
                         try{
-                            choose2 = Integer.parseInt(scanner.nextLine());
+                            choose = Integer.parseInt(scanner.nextLine());
                         } catch (NumberFormatException e) {
                             System.out.println("Nhap lai!!!!");
                         }
-                        switch (choose2) {
+                        switch (choose) {
                             case 1:
                                 customerServiceImpl.display();
                                 break;
                             case 2:
                                 customerServiceImpl.add();
-                                customerServiceImpl.display();
                                 break;
                             case 3:
                                 customerServiceImpl.update();
-                                customerServiceImpl.display();
                                 break;
                             case 4:
                                 displayMainMenu();
@@ -104,13 +100,13 @@ public class FuramaController {
                                 "2.Add new facility\n" +
                                 "3.Display list facility maintenance\n" +
                                 "4.Return main menu");
-                        int choose3 = 0;
+                        choose=0;
                         try{
-                            choose3 = Integer.parseInt(scanner.nextLine());
+                            choose = Integer.parseInt(scanner.nextLine());
                         } catch (NumberFormatException e) {
                             System.out.println("Nhap lai!!!!");
                         }
-                        switch (choose3) {
+                        switch (choose) {
                             case 1:
                                 facilityService.display();
                                 break;
@@ -133,13 +129,13 @@ public class FuramaController {
                             "4.Display list contracts\n" +
                             "5.Edit contracts\n" +
                             "6.Return main menu");
-                        int choose4 = 0;
+                    choose=0;
                         try{
-                            choose4 = Integer.parseInt(scanner.nextLine());
+                            choose = Integer.parseInt(scanner.nextLine());
                         } catch (NumberFormatException e) {
                             System.out.println("Nhap lai!!!!");
                         }
-                    switch (choose4) {
+                    switch (choose) {
                         case 1:
                             bookingService.addBooking();
                             break;
@@ -159,13 +155,13 @@ public class FuramaController {
                     System.out.println("1.Display list customers use service\n" +
                             "2.Display list customers get voucher\n" +
                             "3.Return main menu\n");
-                    int choose5 = 0;
+                    choose=0;
                     try{
-                        choose5 = Integer.parseInt(scanner.nextLine());
+                        choose = Integer.parseInt(scanner.nextLine());
                     } catch (NumberFormatException e) {
                         System.out.println("Nhap lai!!!!");
                     }
-                    switch (choose5) {
+                    switch (choose) {
                         case 1:
                         case 2:
                         case 3:

@@ -16,11 +16,11 @@ public class BookingServiceImpl implements ServiceBooking {
     static List<Customer> customerList = new ArrayList<>();
 
     static {
-        customerList.add(new Customer("tam", 1998,
-                "nam", 1, 999999,
+        customerList.add(new Customer("tam", "1998",
+                "nam", 1, "11111",
                 "tam@gmail.com", 111, "ssasaa"));
-        customerList.add(new Customer("hhh", 1998,
-                "nam", 2, 88888,
+        customerList.add(new Customer("hhh", "1998",
+                "nam", 2, "88888",
                 "hhhh@gmail.com", 222, "bbbbbb"));
 
         facilityIntegerMap.put(new Villa("Villa", 20, 20, 4,
