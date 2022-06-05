@@ -251,8 +251,4 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
         }
     }
 
-    @Override
-    public void search() {
-
-    }
 }

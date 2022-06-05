@@ -16,16 +16,15 @@ public class CustomerServiceImpl extends Customer implements CustomerService {
     public static LinkedList<Customer> customersList = new LinkedList<Customer>();
 
 
-
     @Override
     public void add() throws IOException {
-        int id=0;
+        int id = 0;
         list = ReadAndWrite.readerFile("src/CaseStudy/Task2/data/datacustomer.csv");
         customersList.clear();
         for (String[] item : list) {
             Customer customer = new Customer
                     (item[0],
-                    item[1],
+                            item[1],
                             item[2],
                             Integer.parseInt(item[3]),
                             item[4],
@@ -55,14 +54,13 @@ public class CustomerServiceImpl extends Customer implements CustomerService {
         System.out.println("nhập lương:");
         double salary = Double.parseDouble(scanner.nextLine());
 
-        if(customersList.isEmpty()){
-            id=1;
-        }
-        else{
-            id=customersList.get(customersList.size()-1).getId()+1;
+        if (customersList.isEmpty()) {
+            id = 1;
+        } else {
+            id = customersList.get(customersList.size() - 1).getId() + 1;
         }
 
-        Customer customer=new Customer(firstNameAndLastName, dayOfBirth, gender, id, phoneNumber, email, customerCode, getTypeOfCustomer());
+        Customer customer = new Customer(firstNameAndLastName, dayOfBirth, gender, id, phoneNumber, email, customerCode, getTypeOfCustomer());
         customersList.add(customer);
 
         String line = customer.getInfo();
@@ -151,8 +149,7 @@ public class CustomerServiceImpl extends Customer implements CustomerService {
             String email = scanner.nextLine();
 
             System.out.println("nhap customercode");
-            int customerCode=Integer.parseInt(scanner.nextLine());
-
+            int customerCode = Integer.parseInt(scanner.nextLine());
 
 
             customersList.get(index).setFullName(firstNameAndLastName);
@@ -165,20 +162,15 @@ public class CustomerServiceImpl extends Customer implements CustomerService {
 
             ReadAndWrite.clearFile("src/CaseStudy/Task2/data/datacustomer.csv");
 
-            for(Customer item:customersList){
+            for (Customer item : customersList) {
                 String line = item.getInfo();
-;
+                ;
                 ReadAndWrite.writeFile("src/CaseStudy/Task2/data/datacustomer.csv", line);
             }
             System.out.println("Da sửa thanh cong");
-        }
-        else {
+        } else {
             System.out.println("ID ko tồn tại");
         }
     }
 
-    @Override
-    public void search() {
-
-    }
 }

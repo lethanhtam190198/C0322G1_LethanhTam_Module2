@@ -11,6 +11,4 @@ public interface Service {
 
     void update() throws IOException;
 
-    void search();
-
 }

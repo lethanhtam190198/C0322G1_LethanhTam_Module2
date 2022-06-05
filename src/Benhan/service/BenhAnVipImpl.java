@@ -147,7 +147,7 @@ public class BenhAnVipImpl extends BenhAnVip implements IBenhAn {
         String ngayRavien;
         do {
             try {
-                System.out.println("nhap ngay nhap vien");
+                System.out.println("nhap ra nhap vien");
                 ngayRavien = scanner.nextLine();
                 if(Regex.dateFormat(ngayRavien)){
                     break;
