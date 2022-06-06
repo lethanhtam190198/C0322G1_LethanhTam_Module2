@@ -43,8 +43,20 @@ public class ProductStaffImpl implements IStaff {
             id = max + 1;
         }
 
-        System.out.println("Nhập mã nhân viên:");
-        String employeeCode = scanner.nextLine();
+        String employeeCode;
+        do {
+            try {
+                System.out.println("Nhập mã nhân viên:    NV-XXXX");
+                employeeCode = scanner.nextLine();
+                if (Regex.formatMaNV(employeeCode)) {
+                    break;
+                } else {
+                    System.out.println("Wrong Format Input!!");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }while (true);
 
         String fullName;
         do {

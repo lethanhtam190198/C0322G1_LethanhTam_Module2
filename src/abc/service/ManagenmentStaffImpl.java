@@ -42,8 +42,20 @@ public class ManagenmentStaffImpl implements IStaff {
             id= max+1;
         }
 
-        System.out.println("Nhập mã nhân viên:");
-        String employeeCode= scanner.nextLine();
+        String employeeCode;
+        do {
+            try {
+                System.out.println("Nhập mã nhân viên:    NV-XXXX");
+                employeeCode = scanner.nextLine();
+                if (Regex.formatMaNV(employeeCode)) {
+                    break;
+                } else {
+                    System.out.println("Wrong Format Input!!");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }while (true);
 
         String fullName;
         do {
@@ -53,7 +65,7 @@ public class ManagenmentStaffImpl implements IStaff {
                 if (Regex.formatName(fullName)) {
                     break;
                 } else {
-                    throw new FullNameEx("Wrong Fomat Input");
+                    throw new FullNameEx("Wrong Format Input");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
