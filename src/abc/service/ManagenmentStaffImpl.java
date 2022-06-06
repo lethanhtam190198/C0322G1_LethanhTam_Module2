@@ -214,7 +214,7 @@ public class ManagenmentStaffImpl implements IStaff {
         String search=scanner.nextLine();
         boolean check = false;
         for (int i = 0; i < managenmentStaffs.size(); i++) {
-            if (managenmentStaffs.get(i).getEmployeeCode().equals(search)) {
+            if (managenmentStaffs.get(i).getEmployeeCode().contains(search)) {
                 System.out.println(managenmentStaffs.get(i));
             }
             else {
