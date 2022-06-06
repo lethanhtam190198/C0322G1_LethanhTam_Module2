@@ -30,6 +30,7 @@ public class Controller {
             } catch (NumberFormatException e) {
                 System.out.println("Nhap lai!!!!");
             }
+
             switch (choose) {
                 case 1:
                     do {
@@ -54,6 +55,7 @@ public class Controller {
                                 displayMainMenu();
                         }
                     } while (true);
+
                 case 2:
                     do{
                         System.out.println("--------Addd-------\n" +
@@ -76,8 +78,8 @@ public class Controller {
                             case 3:
                                 displayMainMenu();
                         }
-
                     }while (true);
+
                 case 3:
                     do{
                         System.out.println("--------Delete-------\n" +
@@ -124,9 +126,7 @@ public class Controller {
                             case 3:
                                 displayMainMenu();
                         }
-
                     }while (true);
-
             }
         } while (true);
     }

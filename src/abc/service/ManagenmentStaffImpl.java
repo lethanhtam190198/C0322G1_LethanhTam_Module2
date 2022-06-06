@@ -132,6 +132,7 @@ public class ManagenmentStaffImpl implements IAbc{
                     Double.parseDouble(item[6]));
             managenmentStaffs.add(managenmentStaff);
         }
+
         System.out.println("Nhập mã nhân viên muốn xoá");
         String delete= scanner.nextLine();
         boolean check= false;
@@ -146,18 +147,18 @@ public class ManagenmentStaffImpl implements IAbc{
         if(check){
             System.out.println("Mã nv ko tồn tại");
         }
+
         abc.data.ReadAndWrite.clearFile("src/abc/data/Management.csv");
         for(ManagenmentStaff item:managenmentStaffs ){
             String line=
-                    item.getId()+","+
-                    item.getEmployeeCode()+","+
+                            item.getId()+","+
+                            item.getEmployeeCode()+","+
                             item.getFullName()+","+
                             item.getDayOfBirth()+","+
                             item.getAddress()+","+
                             item.getSalary()+","+
                             item.getCoefficientsSalary();
             abc.data.ReadAndWrite.writeFile("src/abc/data/Management.csv",line);
-
         }
     }
 
@@ -176,6 +177,7 @@ public class ManagenmentStaffImpl implements IAbc{
                     Double.parseDouble(item[6]));
             managenmentStaffs.add(managenmentStaff);
         }
+
         System.out.println("nhập mã nv muốn tìm");
         String search=scanner.nextLine();
         boolean check = false;

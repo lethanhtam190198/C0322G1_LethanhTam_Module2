@@ -96,7 +96,6 @@ public class ProductStaffImpl implements IAbc {
 
         abc.data.ReadAndWrite.writeFile("src/abc/data/Product.csv", line);
         System.out.println("Đã thêm thành công");
-
     }
 
 
@@ -119,7 +118,6 @@ public class ProductStaffImpl implements IAbc {
         for (ProductionStaff productionStaff : productionStaffs) {
             System.out.println(productionStaff);
         }
-
     }
 
     @Override

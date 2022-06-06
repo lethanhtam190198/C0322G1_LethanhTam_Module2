@@ -60,7 +60,6 @@ public abstract class Employee {
 
     public abstract String getInfo() ;
 
-
     @Override
     public  String toString() {
         return
