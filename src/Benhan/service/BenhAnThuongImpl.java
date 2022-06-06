@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class BenhAnThuongImpl extends BenhAnThuong implements IBenhAn {
+public class BenhAnThuongImpl implements IBenhAn {
     List<String[]> list = new ArrayList<>();
     ArrayList<BenhAnThuong> benhAnThuongList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
@@ -37,7 +37,6 @@ public class BenhAnThuongImpl extends BenhAnThuong implements IBenhAn {
         for (BenhAnThuong benhAnThuong : benhAnThuongList) {
             System.out.println(benhAnThuong);
         }
-
     }
 
     @Override

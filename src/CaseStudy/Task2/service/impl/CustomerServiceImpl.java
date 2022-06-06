@@ -164,7 +164,7 @@ public class CustomerServiceImpl extends Customer implements CustomerService {
 
             for (Customer item : customersList) {
                 String line = item.getInfo();
-                ;
+
                 ReadAndWrite.writeFile("src/CaseStudy/Task2/data/datacustomer.csv", line);
             }
             System.out.println("Da sửa thanh cong");
