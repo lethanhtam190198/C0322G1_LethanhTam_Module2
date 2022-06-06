@@ -83,7 +83,7 @@ public class ProductStaffImpl implements IStaff {
         boolean flag = false;
         do {
             try {
-                System.out.print("Input Salary:");
+                System.out.print("Input so san pham:");
                 productNumber = Integer.parseInt(scanner.nextLine());
                 if (productNumber > 0) {
                     flag = false;
@@ -103,7 +103,7 @@ public class ProductStaffImpl implements IStaff {
         boolean flag1 = false;
         do {
             try {
-                System.out.print("Input Salary:");
+                System.out.print("Input gia moi san pham:");
                 priceProduct = Double.parseDouble(scanner.nextLine());
                 if (priceProduct > 0) {
                     flag1 = false;
