@@ -77,11 +77,43 @@ public class ManagenmentStaffImpl implements IStaff {
         System.out.println("Nhập địa chỉ");
         String address= scanner.nextLine();
 
-        System.out.println("nhập lương");
-        double salary=Double.parseDouble(scanner.nextLine());
+        double salary = 0;
+        boolean flag2 = false;
+        do {
+            try {
+                System.out.print("Input Salary:");
+                salary = Double.parseDouble(scanner.nextLine());
+                if (salary > 0) {
+                    flag2 = false;
+                } else {
+                    System.out.println("Retype ");
+                    flag2 = true;
+                }
 
-        System.out.println("nhập hệ số lương");
-        double coefficientsSalary= Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                flag2 = true;
+            }
+        } while (flag2);
+
+        double coefficientsSalary = 0;
+        boolean flag3 = false;
+        do {
+            try {
+                System.out.print("Input he so luong:");
+                coefficientsSalary = Double.parseDouble(scanner.nextLine());
+                if (coefficientsSalary > 0) {
+                    flag3 = false;
+                } else {
+                    System.out.println("Retype ");
+                    flag3 = true;
+                }
+
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                flag3 = true;
+            }
+        } while (flag3);
 
         ManagenmentStaff managenmentStaff= new ManagenmentStaff(
                 id,employeeCode,fullName,dayOfBirth,address,salary,

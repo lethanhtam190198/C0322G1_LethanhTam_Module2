@@ -79,11 +79,44 @@ public class ProductStaffImpl implements IStaff {
         String address = scanner.nextLine();
 
 
-        System.out.println("Nhập số sản phẩm");
-        int productNumber = Integer.parseInt(scanner.nextLine());
+        int productNumber = 0;
+        boolean flag = false;
+        do {
+            try {
+                System.out.print("Input Salary:");
+                productNumber = Integer.parseInt(scanner.nextLine());
+                if (productNumber > 0) {
+                    flag = false;
+                } else {
+                    System.out.println("Retype ");
+                    flag = true;
+                }
 
-        System.out.println("nhập giá mỗi sản phẩm");
-        double priceProduct = Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                flag = true;
+            }
+        } while (flag);
+
+
+        double priceProduct = 0;
+        boolean flag1 = false;
+        do {
+            try {
+                System.out.print("Input Salary:");
+                priceProduct = Double.parseDouble(scanner.nextLine());
+                if (priceProduct > 0) {
+                    flag1 = false;
+                } else {
+                    System.out.println("Retype ");
+                    flag1 = true;
+                }
+
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                flag1 = true;
+            }
+        } while (flag1);
 
         ProductionStaff productionStaff = new ProductionStaff(
                 id, employeeCode, fullName, dayOfBirth, address,
