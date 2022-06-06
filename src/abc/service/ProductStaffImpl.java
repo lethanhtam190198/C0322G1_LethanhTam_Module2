@@ -2,7 +2,6 @@ package abc.service;
 
 import CaseStudy.Task2.Exception.FullNameEx;
 import CaseStudy.Task2.data.ReadAndWrite;
-import abc.models.ManagenmentStaff;
 import abc.models.ProductionStaff;
 import abc.regex.Regex;
 
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductStaffImpl implements IAbc {
+public class ProductStaffImpl implements IStaff {
     List<String[]> list1 = new ArrayList<>();
     ArrayList<ProductionStaff> productionStaffs = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);

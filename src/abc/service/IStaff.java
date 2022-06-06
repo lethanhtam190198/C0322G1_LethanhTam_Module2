@@ -2,7 +2,7 @@ package abc.service;
 
 import java.io.IOException;
 
-public interface IAbc {
+public interface IStaff {
     void add() throws IOException;
 
     void display();

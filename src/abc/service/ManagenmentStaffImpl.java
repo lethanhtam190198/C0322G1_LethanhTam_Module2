@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ManagenmentStaffImpl implements IAbc{
+public class ManagenmentStaffImpl implements IStaff {
     List<String[]> list = new ArrayList<>();
     ArrayList<ManagenmentStaff> managenmentStaffs = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
