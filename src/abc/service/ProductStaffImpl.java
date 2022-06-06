@@ -186,7 +186,7 @@ public class ProductStaffImpl implements IAbc {
         String search=scanner.nextLine();
         boolean check = false;
         for (int i = 0; i < productionStaffs.size(); i++) {
-            if (productionStaffs.get(i).getEmployeeCode().equals(search)) {
+            if (productionStaffs.get(i).getEmployeeCode().contains(search)) {
                 System.out.println(productionStaffs.get(i));
             }
         }
